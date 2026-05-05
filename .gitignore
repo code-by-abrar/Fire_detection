@@ -17,4 +17,3 @@ Thumbs.db
 # Ignore YOLOv8 auto-generated folders
 runs/
 
-train.py
