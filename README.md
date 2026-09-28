@@ -1,84 +1,58 @@
-# 🔥 Fire & Smoke Detection System (Real-Time)
+# 🔥 Real-Time Fire & Smoke Hazard Detection System (YOLOv8)
 
-An AI-powered computer vision system designed to detect fire and smoke in real time from video streams, with a focus on enabling automated response systems.
+<div align="center">
 
-This project goes beyond basic object detection by targeting early hazard detection and future integration with autonomous suppression systems (e.g., drones, smart sprinklers).
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-blue.svg?style=for-the-badge)](https://ultralytics.com)
+[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C.svg?style=for-the-badge&logo=pytorch)](https://pytorch.org)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer%20Vision-5C3EE8.svg?style=for-the-badge)](https://opencv.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-##  Overview
-Fire incidents often escalate due to delayed human response.  
-This system aims to reduce that delay by:
+**An early-warning disaster prevention model identifying active fire flames and smoke plumes in video surveillance streams with near-zero false alarms.**
 
-- Continuously monitoring video feeds  
-- Detecting fire & smoke instantly  
-- Providing confidence-based predictions  
-- Enabling integration with automated response mechanisms  
- Goal: Shift from passive monitoring → active, real-time response
+</div>
 
-## 🧠 Features
-- 🔍 Real-time fire and smoke detection  
-- 🎯 Bounding box predictions with confidence scores  
-- 📹 Works on images, videos, and live streams  
-- ⚡ Optimized for fast inference  
-- 🔗 Designed for integration with IoT / automation systems  
+---
 
-##  System Architecture
-1. Input: Live video stream / recorded footage  
-2. Preprocessing: Frame extraction & resizing  
-3. Model Inference: Fire & smoke detection  
-4. Output:
-   - Bounding boxes  
-   - Confidence scores  
-5. Future Integration:
-   - Trigger alerts / alarms  
-   - Activate water suppression systems  
+## 📌 Project Overview
 
-##  Tech Stack
-- Python  
-- OpenCV  
-- YOLO (Object Detection Model)  
-- NumPy / Pandas  
-- PyTorch / Ultralytics  
+Early detection is paramount to mitigating devastating fire outbreaks. This computer vision system leverages fine-tuned **YOLOv8** to monitor CCTV video feeds in industrial plants, residential complexes, and forests, generating instant alerts when flame or smoke signatures appear.
 
-##  Model Details
+---
 
-- Model: YOLOv8  
-- Classes: Fire, Smoke  
+## 🎯 Classes & Detection Performance
 
-## 📦 Installation
-git clone 
-pip install -r requirements.txt  
+- 🔥 **Fire / Flame**: Localizes active flame pockets even in small early-stage clusters.
+- 💨 **Smoke**: Detects expanding smoke plumes in open air and indoor settings.
 
-## ▶️ Usage
-Run on Image:  
-python detect.py --source image.jpg  
+---
 
-Run on Video:  
-python detect.py --source video.mp4  
+## ⚡ Features
 
-Run on Webcam:  
-python detect.py --source 0  
+- **⚡ Low-Latency Inference**: Operates in real-time on standard GPU/CPU hardware.
+- **🎥 Stream Processing**: Tested on full-length hazard videos (`fire_pro.mp4`).
+- **🏋️ Complete Training Pipeline**: Includes `train.py` for retraining on customized environmental datasets.
 
+---
 
-##  Future Work
--  Integration with autonomous drones for fire suppression  
--  Automatic sprinkler system activation  
--  Cloud-based monitoring dashboard  
--  IoT-based real-time alert system  
--  Model optimization for edge devices  
+## 🛠️ Usage
 
-## Limitations
-- Performance may vary in low-light or fog conditions  
-- Requires further validation for real-world deployment  
-- False positives possible in fire-like environments  
-This is a research/development system, not production-ready yet.
+1. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-##  Contributing
-Contributions, ideas, and improvements are welcome.  
-Feel free to open issues or submit pull requests.
+2. **Run Real-Time Detection**:
+   ```bash
+   python detect.py --weights model/best.pt --source fire_pro.mp4
+   ```
 
-##  Contact
-If you're working on AI safety systems, computer vision, or smart infrastructure, feel free to connect.
+3. **Train Custom Model**:
+   ```bash
+   python train.py
+   ```
 
-##  Final Note
-This project represents a step toward AI systems that don’t just detect problems — but enable immediate action.
-Training was performed on Google Colab using Roboflow dataset integration.
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
